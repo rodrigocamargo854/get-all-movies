@@ -41,7 +41,7 @@ export default function Treading({ data }) {
         <Text color="pink.300">Popular Movies</Text>
         <Flex align="center" justify="center" gap="3">
           <Text color="blue.100">Day</Text>
-          <Switch size="lg" onChange={changePopulationRouter} />
+          <Switch size="md" onChange={changePopulationRouter} />
           <Text color="green.white">week</Text>
         </Flex>
       </Flex>
@@ -57,7 +57,7 @@ export default function Treading({ data }) {
 
             return (
               <Box key={id}>
-                <img src={image} />
+                <img  src={image} alt='movies' />
                 <Text
                   fontSize="1xl"
                   fontWeight="bold"
