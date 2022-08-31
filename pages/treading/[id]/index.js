@@ -28,7 +28,7 @@ export default function Treading({ data }) {
   const router = useRouter();
 
   const changePopulationRouter = useCallback(
-    (event: ChangeEvent<HTMLInputElement>) => {
+    (event) => {
       const option = event.target.checked ? "week" : "day";
       router.push(`/treading/${option}`)
     },
@@ -51,7 +51,7 @@ export default function Treading({ data }) {
       </Flex>
       <Flex align="center" justify="center">
         <SimpleGrid columns={3} spacing={4}>
-          {results.map((result) => {
+          {results?.map((result) => {
             const { id, poster_path, vote_average } = result;
             const image = `https://image.tmdb.org/t/p/w200/${poster_path}`;
 
