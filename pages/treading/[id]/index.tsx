@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   Flex,
   Text,
@@ -8,10 +7,11 @@ import {
   Stack,
 } from "@chakra-ui/react";
 
-const defaultEndPoint = `https://api.themoviedb.org/3/trending/all/week?api_key=${process.env.NEXT_PUBLIC_SYSTEM_ID}`;
-
-export async function getServerSideProps() {
-  const res = await fetch(defaultEndPoint);
+const defaultEndPoint = `https://api.themoviedb.org/3/trending/all`;
+const apiKey = `?api_key=${process.env.NEXT_PUBLIC_SYSTEM_ID}`;
+export async function getServerSideProps({ query }) {
+  const { id } = query;
+  const res = await fetch(`${defaultEndPoint}/${id}${apiKey}`);
   const data = await res.json();
   return {
     props: {
@@ -20,9 +20,7 @@ export async function getServerSideProps() {
   };
 }
 export default function Treading({ data }) {
-  console.log(data);
-  const { info, results: defaultResults = [] } = data;
-  const [results, updateResults] = useState(defaultResults);
+  const { results } = data;
 
   return (
     <>

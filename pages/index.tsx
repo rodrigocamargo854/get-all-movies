@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Flex, Button, Text } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 import Link from "../node_modules/next/link";
 
 export default function Home() {
