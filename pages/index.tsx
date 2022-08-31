@@ -7,9 +7,19 @@ export default function Home() {
   return (
     <Flex w="100wh" h="100vh" align="center" justify="center">
       <Link href={`/treading`}>
-        <a>
-          <Text>Get all Movies</Text>
-        </a>
+        <Text
+          as="button"
+          fontSize="3xl"
+          fontWeight="bold"
+          letterSpacing="tight"
+          w="64"
+          border="none"
+          borderRadius="20px"
+          color="blue.300"
+          backgroundColor="gray.500"
+        >
+          Get all Movies
+        </Text>
       </Link>
     </Flex>
   );
