@@ -6,7 +6,7 @@ import Link from "../node_modules/next/link";
 export default function Home() {
   return (
     <Flex w="100wh" h="100vh" align="center" justify="center">
-      <Link href={`/treading`}>
+      <Link href={`/treading/day`}>
         <Text
           as="button"
           fontSize="3xl"

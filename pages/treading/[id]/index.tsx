@@ -5,7 +5,10 @@ import {
   SimpleGrid,
   CircularProgress,
   Stack,
+  Switch,
 } from "@chakra-ui/react";
+import { useRouter } from "next/router";
+import { ChangeEvent, useCallback } from "react";
 
 const defaultEndPoint = `https://api.themoviedb.org/3/trending/all`;
 const apiKey = `?api_key=${process.env.NEXT_PUBLIC_SYSTEM_ID}`;
@@ -22,8 +25,27 @@ export async function getServerSideProps({ query }) {
 export default function Treading({ data }) {
   const { results } = data;
 
+  const router = useRouter();
+
+  const changePopulationRouter = useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      const option = event.target.checked ? "week" : "day";
+      router.push(`/treading/${option}`)
+    },
+    [router]
+  );
+
   return (
     <>
+      <Flex direction="column" align="center" justify="center">
+        <Text color="pink.300">Popular Movies</Text>
+        <Flex align="center" justify="center" gap="3">
+          <Text color="blue.100">Day</Text>
+          <Switch size="lg" onChange={changePopulationRouter} />
+          <Text color="green.white">week</Text>
+        </Flex>
+      </Flex>
+
       <Flex align="center" justify="center">
         <Text>Movies From TMDB </Text>
       </Flex>
