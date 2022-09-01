@@ -1,4 +1,4 @@
-![]('../../public/getAllmovies.gif')
+
 
 <h1 align="center">
     Get All Popular movie - Next.js
@@ -16,12 +16,13 @@
 
 ## about-the-project
 
-This project has been created for development inprovmented using the following steps and hands on a real ReactJs with NextJs application with externals API's and all new atibuttes NextJs offers  to clients subscriptions and clients payment methods.  
+this project has been created to conect a movie api and bring all popular movies offer to user a option about day popularity or week popularity.
 
 
 
 
----
+---![getAllmoviessss](https://user-images.githubusercontent.com/47711649/187779288-8a54aad1-3280-47bb-add2-a4f56af67523.gif)
+
 
 ## Main Technologies
 
