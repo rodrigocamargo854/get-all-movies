@@ -8,10 +8,9 @@ import {
   Switch,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
-import {  useCallback } from "react";
-import { format } from 'date-fns'
-import { ptBR } from 'date-fns/locale';
-
+import { useCallback } from "react";
+import { format } from "date-fns";
+import { ptBR } from "date-fns/locale";
 
 const defaultEndPoint = `https://api.themoviedb.org/3/trending/all`;
 const apiKey = `?api_key=${process.env.NEXT_PUBLIC_SYSTEM_ID}`;
@@ -70,27 +69,30 @@ export default function Treading({ data }) {
                 >
                   Name: {result?.name || result?.title}
                 </Text>
+                <Flex align="center" justify="center" gap="1">
+                Date:
                 <Text
-                  fontSize="1xl"
-                  fontWeight="bold"
-                  letterSpacing="tight"
-                  color="pink.500"
-                  w="64"
-                >
-                  Date: 
-                  {format(
-                    new Date(result?.release_date || result?.first_air_date),
-                    "dd MMM yyyy",
-                    {
-                      locale: ptBR,
-                    }
-                  )}
-                </Text>
-                <Stack spacing="410">
-                  <CircularProgress value={vote_average} size="20px">
+                    fontSize="1xl"
+                    fontWeight="bold"
+                    letterSpacing="tight"
+                    color="pink.500"
+                    w="64"
+                  >
+                    {format(
+                      new Date(result?.release_date || result?.first_air_date),
+                      "dd MMM yyyy",
+                      {
+                        locale: ptBR,
+                      }
+                    )}
+                  </Text>
+                </Flex>
+                 
+                <Flex   gap="3">
+
+                  <CircularProgress value={vote_average} size="20px"/>
                     {vote_average}
-                  </CircularProgress>
-                </Stack>
+                </Flex>
               </Box>
             );
           })}
