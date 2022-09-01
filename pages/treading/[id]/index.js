@@ -8,7 +8,10 @@ import {
   Switch,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
-import { ChangeEvent, useCallback } from "react";
+import {  useCallback } from "react";
+import { format } from 'date-fns'
+import { ptBR } from 'date-fns/locale';
+
 
 const defaultEndPoint = `https://api.themoviedb.org/3/trending/all`;
 const apiKey = `?api_key=${process.env.NEXT_PUBLIC_SYSTEM_ID}`;
@@ -30,7 +33,7 @@ export default function Treading({ data }) {
   const changePopulationRouter = useCallback(
     (event) => {
       const option = event.target.checked ? "week" : "day";
-      router.push(`/treading/${option}`)
+      router.push(`/treading/${option}`);
     },
     [router]
   );
@@ -57,7 +60,7 @@ export default function Treading({ data }) {
 
             return (
               <Box key={id}>
-                <img  src={image} alt='movies' />
+                <img src={image} alt="movies" />
                 <Text
                   fontSize="1xl"
                   fontWeight="bold"
@@ -74,7 +77,14 @@ export default function Treading({ data }) {
                   color="pink.500"
                   w="64"
                 >
-                  Date: {result?.release_date || result?.first_air_date}
+                  Date: 
+                  {format(
+                    new Date(result?.release_date || result?.first_air_date),
+                    "dd MMM yyyy",
+                    {
+                      locale: ptBR,
+                    }
+                  )}
                 </Text>
                 <Stack spacing="410">
                   <CircularProgress value={vote_average} size="20px">
