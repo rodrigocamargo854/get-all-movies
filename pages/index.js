@@ -1,25 +1,43 @@
 import React from "react";
-
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex, Text, Box } from "@chakra-ui/react";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <Flex w="100wh" h="100vh" align="center" justify="center">
+    <Flex
+      w="100wh"
+      h="100vh"
+      align="center"
+      justify="center"
+      direction="column"
+      bg="gray.900"
+    >
+      <Text
+        fontSize="4xl"
+        fontWeight="bold"
+        letterSpacing="tight"
+        color="white"
+        mb="4"
+      >
+        Dive In & Discover the Most Sought-After Movies of the Day & Week
+      </Text>
+
       <Link href={`/treading/day`}>
-        <Text
+        <Box
           as="button"
-          fontSize="3xl"
+          fontSize="2xl"
           fontWeight="bold"
           letterSpacing="tight"
-          w="64"
-          border="none"
+          px="8"
+          py="4"
+          border="2px solid white"
           borderRadius="20px"
-          color="blue.300"
-          backgroundColor="gray.500"
+          color="white"
+          _hover={{ bg: "gray.800" }}
+          transition="background 0.3s"
         >
-          Get all Movies
-        </Text>
+          Explore Movies
+        </Box>
       </Link>
     </Flex>
   );
