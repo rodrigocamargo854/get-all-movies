@@ -46,8 +46,8 @@ export default function Treading({ data }) {
       <Text fontSize="3xl" color="white" mb="4">
         Popular Movies
       </Text>
-      <Stack direction="row" spacing="3" mb="5">
-        <Text color="gray.300">Day</Text>
+      <Stack direction="row" spacing="3" mb="5" sx={{ alignItems: "first baseline" }}>      
+          <Text color="gray.300">Day</Text>
         <Switch size="md" onChange={changePopulationRouter} />
         <Text color="gray.300">Week</Text>
       </Stack>
@@ -64,21 +64,21 @@ export default function Treading({ data }) {
           return (
             <Box key={id} bg="gray.800" p="5" maxWidth="320px" borderRadius="md">
               <img src={image} alt="movies" style={{ maxWidth: '100%', borderRadius: '10px' }} />
-    <Text
-        fontSize="xl"
-        fontWeight="bold"
-        mt="4"
-        color="white"
-    >
-        {result?.name || result?.title}
-    </Text>
-    <Text color="gray.400" mt="2">
-        Date: {format(new Date(result?.release_date || result?.first_air_date), "dd MMM yyyy", { locale: ptBR })}
-    </Text>
-    <Flex align="center" gap="2" mt="3">
-        <CircularProgress value={vote_average * 10} size="40px" color="green.400" />
-        <Text color="white" fontSize="lg">{vote_average}</Text>
-    </Flex>
+              <Text
+                fontSize="xl"
+                fontWeight="bold"
+                mt="4"
+                color="white"
+              >
+                {result?.name || result?.title}
+              </Text>
+              <Text color="gray.400" mt="2">
+                Date: {format(new Date(result?.release_date || result?.first_air_date), "dd MMM yyyy", { locale: ptBR })}
+              </Text>
+              <Flex align="center" gap="2" mt="3">
+                <CircularProgress value={vote_average * 10} size="40px" color="green.400" />
+                <Text color="white" fontSize="lg">{vote_average}</Text>
+              </Flex>
             </Box>
           );
         })}
