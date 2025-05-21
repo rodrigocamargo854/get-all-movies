@@ -1,81 +1,96 @@
+# 🎬 Trending Movies App
 
+A simple and responsive web application built with **Next.js** and **Chakra UI**, that fetches and displays trending movies, TV shows, and media from **The Movie Database (TMDB) API**.
 
-<h1 align="center">
-    Get All Popular movie - Next.js
-</h1>
-<p align="center">Applicattion that does connections with themoviedb API</a></p>
-
-
-<p align="center">
- <a href="#about-the-project">about-the-project</a> •
- <a href="#tecnologies">tecnologies</a> •
- <a href="#configurations">configurations</a> •
- <a href="#licencies">licencies</a> •
- <a href="#author">author</a>
-</p>
-
-## about-the-project
-
-this project has been created to conect a movie api and bring all popular movies offer to user a option about day popularity or week popularity.
-
-
-
-
----![getAllmoviessss](https://user-images.githubusercontent.com/47711649/187779288-8a54aad1-3280-47bb-add2-a4f56af67523.gif)
-
-
-## Main Technologies
-
-- [ReactJS](https://reactjs.org/)
-- [NextJS](https://nextjs.org/)
-- [chakra](https://v0.chakra-ui.com/)
+Users can toggle between daily and weekly trending content, viewing poster images, ratings, and release dates in a clean and modern interface.
 
 ---
 
-## configurations
+## 🚀 Technologies Used
 
-You have to ...
+- Next.js (React Framework)
+- Chakra UI (Component Library & Styling)
+- JavaScript
+- Date-fns (Date formatting)
+- TMDB API (Data source)
 
-- [Git](https://git-scm.com/)
-- [Yarn](https://classic.yarnpkg.com)
+---
 
+## 📱 Features
 
+- 🔥 Display trending movies, TV shows, and media
+- 🔄 Toggle between **daily** and **weekly** trending content
+- 🎨 Responsive UI with Chakra UI
+- 🗓️ Shows release date formatted with `date-fns`
+- ⭐ Shows user ratings with circular progress indicators
+- 🖼️ Displays poster images from TMDB CDN
 
+---
 
-*servicesConfig.md on project root.*
+## 🏗️ Project Structure
 
-### **Clone do projeto**
-
-### **Iniciando o projeto**
-
-```bash
-# Execute yarn para instalar as dependências
-$ yarn
-
-# Na raiz do projeto crie uma copia do arquivo .env.local.example
-# Altere o nome da copia para .env.local
-# Preencha as variáveis ambiente de acordo com as instruções
-$ cp .env.local.example .env.local
-  Use The Movie DB API v3
-  To get a valid token go to your panel Settings -> API -> API Key (v3 Auth)
-  Get the token an insert in the env file 
-# Execute stripe listen para ouvir eventos do webhook
-
-# Para iniciar a aplicação
-$ yarn run dev
-
+```
+/pages
+  ├── treading/[id].js   # Main trending page by day or week
+/components               # UI components (if any separated)
+/public                   # Static assets
+/styles                   # Global styles if needed
 ```
 
 ---
 
-## Licença
+## 🔗 API Reference
 
-Distribuído sob a licença MIT. Veja [LICENSE](LICENSE) para mais informações.
+- [TMDB API](https://developer.themoviedb.org/docs)
+
+You must set your API key in a `.env.local` file:
+
+```
+NEXT_PUBLIC_SYSTEM_ID=your_tmdb_api_key
+```
 
 ---
 
-## Autor
+## 💡 How to Run Locally
 
-Feito por Rodrigo Camargo 👋🏽 Entre em contato!
+1. Clone this repository:
 
-[![Gmail Badge](https://img.shields.io/badge/-rodrigocamargo854@gmail.com-red?style=flat-square&link=mailto:rodrigocamargo854@gmail.com)](mailto:rodrigocamargo854@gmail.com)
+```bash
+git clone https://github.com/yourusername/trending-movies-app.git
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Run the development server:
+
+```bash
+npm run dev
+```
+
+4. Open in your browser:
+
+```
+http://localhost:3000
+```
+
+---
+
+## 🤝 Contribution
+
+Contributions are welcome! Feel free to open issues, suggest improvements, or submit pull requests.
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+## 🙏 Acknowledgements
+
+Data provided by [TMDB](https://www.themoviedb.org/). This product uses the TMDB API but is not endorsed or certified by TMDB.
